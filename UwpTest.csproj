@@ -23,6 +23,6 @@
     <EnableXamlCompilerTargetsForUwpApps>false</EnableXamlCompilerTargetsForUwpApps>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="StereoKit" Version="0.4.0-preview.1433" />
+    <PackageReference Include="StereoKit" Version="0.4.0-preview.1437" />
   </ItemGroup>
 </Project>
