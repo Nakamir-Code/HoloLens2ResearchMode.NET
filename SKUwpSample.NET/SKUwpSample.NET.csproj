@@ -25,10 +25,11 @@
 		<CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
 	</PropertyGroup>
 	<ItemGroup>
+		<PackageReference Include="Microsoft.MixedReality.QR" Version="0.5.3037" />
 		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
 		<PackageReference Include="StereoKit" Version="0.3.10" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\HoloLens2ResearchMode\HoloLens2ResearchMode.vcxproj" />
+		<ProjectReference Include="..\HoloLens2ResearchMode\HoloLens2ResearchMode.vcxproj" />
 	</ItemGroup>
 </Project>

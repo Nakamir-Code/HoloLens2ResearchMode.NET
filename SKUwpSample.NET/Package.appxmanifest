@@ -9,14 +9,14 @@
   IgnorableNamespaces="uap mp uap2 rescap">
 
 	<Identity
-	  Name="HoloLens2ResearchMode.NET"
+	  Name="SKUwpSample.NET"
 	  Publisher="CN=Nakamir"
 	  Version="1.0.0.0" />
 
 	<mp:PhoneIdentity PhoneProductId="f0dc367a-b062-4268-8364-017afc573a0c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
 	<Properties>
-		<DisplayName>HoloLens2ResearchMode.NET</DisplayName>
+		<DisplayName>SKUwpSample.NET</DisplayName>
 		<PublisherDisplayName>Nakamir</PublisherDisplayName>
 		<Logo>Assets\UWP\StoreLogo.png</Logo>
 	</Properties>
@@ -32,12 +32,12 @@
 	<Applications>
 		<Application Id="App"
 		  Executable="$targetnametoken$.exe"
-		  EntryPoint="HoloLens2ResearchMode.NET.App">
+		  EntryPoint="SKUwpSample.NET.App">
 			<uap:VisualElements
-			  DisplayName="HoloLens2ResearchMode.NET"
+			  DisplayName="SKUwpSample.NET"
 			  Square150x150Logo="Assets\UWP\Square150x150Logo.png"
 			  Square44x44Logo="Assets\UWP\Square44x44Logo.png"
-			  Description="HoloLens2ResearchMode.NET"
+			  Description="SKUwpSample.NET"
 			  BackgroundColor="transparent">
 				<uap:DefaultTile Wide310x150Logo="Assets\UWP\Wide310x150Logo.png"/>
 				<uap:SplashScreen Image="Assets\UWP\SplashScreen.png" />
