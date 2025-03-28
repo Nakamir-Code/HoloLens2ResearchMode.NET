@@ -21,6 +21,8 @@ _ = CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(Windows.UI.Core.Core
 ISpatialAnchor spatialAnchor = new QRCodeAnchor();
 _ = Task.Run(async () =>
 {
+	// Note that you may want to request camera permissions on the UI thread
+	// like above instead of the thread pool here
 	await spatialAnchor.InitializeAsync();
 	SK.AddStepper(new QRCodeRenderer(spatialAnchor));
 });

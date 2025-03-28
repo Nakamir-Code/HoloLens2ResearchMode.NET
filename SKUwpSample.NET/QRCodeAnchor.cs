@@ -46,21 +46,16 @@ public class QRCodeAnchor : ISpatialAnchor
 	public IEnumerable<IAnchorData> AnchorData => _anchorData.Values;
 
 	/// <inheritdoc/>
-	public Task<bool> IsAccessPermittedAsync()
+	public async Task<bool> IsAccessPermittedAsync()
 	{
-		async Task<bool> RequestAccessAsync()
+		if (!QRCodeWatcher.IsSupported())
 		{
-			if (!QRCodeWatcher.IsSupported())
-			{
-				Log.Err("QR Code Tracking is not supported.");
-				return false;
-			}
-
-			_accessStatus = await QRCodeWatcher.RequestAccessAsync();
-			return _accessStatus == QRCodeWatcherAccessStatus.Allowed;
+			Log.Err("QR Code Tracking is not supported.");
+			return false;
 		}
 
-		return RequestAccessAsync();
+		_accessStatus = await QRCodeWatcher.RequestAccessAsync();
+		return _accessStatus == QRCodeWatcherAccessStatus.Allowed;
 	}
 
 	/// <inheritdoc/>
@@ -147,10 +142,8 @@ public class QRCodeAnchor : ISpatialAnchor
 	}
 
 	/// <summary>
-	/// 
+	/// Initializes and runs QR Code tracking.
 	/// </summary>
-	/// <returns></returns>
-	/// <exception cref="InvalidOperationException"></exception>
 	public async Task InitializeAsync()
 	{
 		bool isAccessPermitted = await IsAccessPermittedAsync();
