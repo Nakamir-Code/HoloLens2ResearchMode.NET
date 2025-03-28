@@ -1,13 +1,15 @@
-﻿using HoloLens2ResearchMode;
+﻿using System;
+using HoloLens2ResearchMode;
 using StereoKit;
-using System;
-using System.ComponentModel;
-using Windows.Foundation;
+using Windows.ApplicationModel.Core;
 
 SK.Initialize();
 
-ResearchModeSensorDevice sensorDevice = new();
-ResearchModeSensorConsent requestCameraAccessTask = await sensorDevice.RequestCameraAccessAsync().AsTask();
+_ = CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
+{
+	ResearchModeSensorDevice sensorDevice = new();
+	ResearchModeSensorConsent requestCameraAccessTask = await sensorDevice.RequestCameraAccessAsync().AsTask();
+});
 
 Model model = Model.FromFile("Watermelon.glb");
 Material floor = new("Floor.hlsl");

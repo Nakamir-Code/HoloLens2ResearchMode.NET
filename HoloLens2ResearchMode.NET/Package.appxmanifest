@@ -4,46 +4,52 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  IgnorableNamespaces="uap mp">
+  xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap mp uap2 rescap">
 
-  <Identity
-    Name="f0dc367a-b062-4268-8364-017afc573a0c"
-    Publisher="CN=StereoKit"
-    Version="1.0.0.0" />
+	<Identity
+	  Name="HoloLens2ResearchMode.NET"
+	  Publisher="CN=Nakamir"
+	  Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="f0dc367a-b062-4268-8364-017afc573a0c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+	<mp:PhoneIdentity PhoneProductId="f0dc367a-b062-4268-8364-017afc573a0c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
-  <Properties>
-    <DisplayName>UwpTest</DisplayName>
-    <PublisherDisplayName>StereoKit</PublisherDisplayName>
-    <Logo>Assets\UWP\StoreLogo.png</Logo>
-  </Properties>
+	<Properties>
+		<DisplayName>HoloLens2ResearchMode.NET</DisplayName>
+		<PublisherDisplayName>Nakamir</PublisherDisplayName>
+		<Logo>Assets\UWP\StoreLogo.png</Logo>
+	</Properties>
 
-  <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
-  </Dependencies>
+	<Dependencies>
+		<TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+	</Dependencies>
 
-  <Resources>
-    <Resource Language="x-generate"/>
-  </Resources>
+	<Resources>
+		<Resource Language="x-generate"/>
+	</Resources>
 
-  <Applications>
-    <Application Id="App"
-      Executable="$targetnametoken$.exe"
-      EntryPoint="UwpTest.App">
-      <uap:VisualElements
-        DisplayName="UwpTest"
-        Square150x150Logo="Assets\UWP\Square150x150Logo.png"
-        Square44x44Logo="Assets\UWP\Square44x44Logo.png"
-        Description="UwpTest"
-        BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\UWP\Wide310x150Logo.png"/>
-        <uap:SplashScreen Image="Assets\UWP\SplashScreen.png" />
-      </uap:VisualElements>
-    </Application>
-  </Applications>
+	<Applications>
+		<Application Id="App"
+		  Executable="$targetnametoken$.exe"
+		  EntryPoint="HoloLens2ResearchMode.NET.App">
+			<uap:VisualElements
+			  DisplayName="HoloLens2ResearchMode.NET"
+			  Square150x150Logo="Assets\UWP\Square150x150Logo.png"
+			  Square44x44Logo="Assets\UWP\Square44x44Logo.png"
+			  Description="HoloLens2ResearchMode.NET"
+			  BackgroundColor="transparent">
+				<uap:DefaultTile Wide310x150Logo="Assets\UWP\Wide310x150Logo.png"/>
+				<uap:SplashScreen Image="Assets\UWP\SplashScreen.png" />
+			</uap:VisualElements>
+		</Application>
+	</Applications>
 
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
+	<Capabilities>
+		<Capability Name="internetClient" />
+		<uap:Capability Name="documentsLibrary" />
+		<DeviceCapability Name="webcam" />
+		<DeviceCapability Name="wifiControl" />
+		<DeviceCapability Name="backgroundSpatialPerception" />
+	</Capabilities>
 </Package>
