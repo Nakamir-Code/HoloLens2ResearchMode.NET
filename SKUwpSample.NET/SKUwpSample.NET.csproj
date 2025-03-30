@@ -21,7 +21,7 @@
     <EnableXamlCompilerTargetsForUwpApps>false</EnableXamlCompilerTargetsForUwpApps>
     <DefineConstants>$(DefineConstants);WINDOWS_UWP</DefineConstants>
     <!--
-      If you receive the deployment error: "Cannot copy the file", try the following:
+			If you receive the deployment error: "Cannot copy the file", try the following:
 				1. Set `SKCopyAssets` to `false` and deploy.
 				2. Comment out `SKCopyAssets` and deploy again.
 			More info can be found here: https://github.com/StereoKit/StereoKit/issues/1122#issuecomment-2667459053
@@ -33,14 +33,14 @@
     <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
   </PropertyGroup>
   <!--
-    The QR's NuGet package will try to include the incorrect DotNet DLL for the UWP platform,
-    so we generate projections via the CsWinRT tool and include the native arm64 DLL in the project.
-  -->
+		The QR's NuGet package will try to include the incorrect DotNet DLL for the UWP platform,
+		so we generate projections via the CsWinRT tool and include the native arm64 DLL in the project.
+	-->
   <ItemGroup>
     <CsWinRTInputs Include="../Microsoft.MixedReality.QR/0.5.3037/lib/uap10.0.18362/Microsoft.MixedReality.QR.winmd" />
     <Content Include="../Microsoft.MixedReality.QR/0.5.3037/runtimes/win10-arm64/native/Microsoft.MixedReality.QR.dll"
-             CopyToOutputDirectory="PreserveNewest"
-             Visible="false" />
+	           CopyToOutputDirectory="PreserveNewest"
+		         Visible="false" />
     <ProjectReference Include="../HoloLens2ResearchMode/HoloLens2ResearchMode.vcxproj" />
     <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
     <PackageReference Include="StereoKit" Version="0.3.10" />

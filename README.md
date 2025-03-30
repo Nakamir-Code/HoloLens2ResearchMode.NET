@@ -33,11 +33,10 @@ To ensure proper interop, manually include the .winmd file for CsWinRT projectio
 
 ```xml
 <ItemGroup>
-  <CsWinRTInputs Include="../Microsoft.MixedReality.QR/0.5.3037/lib/uap10.0.18362/Microsoft.MixedReality.QR.winmd" />
-  <Content Include="../Microsoft.MixedReality.QR/0.5.3037/runtimes/win10-arm64/native/Microsoft.MixedReality.QR.dll"
-           CopyToOutputDirectory="Always"
-           DeploymentContent="true"
-           Visible="false" />
+    <CsWinRTInputs Include="../Microsoft.MixedReality.QR/0.5.3037/lib/uap10.0.18362/Microsoft.MixedReality.QR.winmd" />
+    <Content Include="../Microsoft.MixedReality.QR/0.5.3037/runtimes/win10-arm64/native/Microsoft.MixedReality.QR.dll"
+             CopyToOutputDirectory="PreserveNewest"
+             Visible="false" />
 </ItemGroup>
 ```
 This setup ensures CsWinRT generates the correct C# projection and that the appropriate native DLL is included.
